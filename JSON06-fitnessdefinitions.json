@@ -1,0 +1,65 @@
+{
+	"fitnessInfo": {
+		"labelGroup": [
+			{
+				"label": "Heart Rate",
+				"characterization": "Heart rate, or pulse, is how many times your heart beats in a period of time — usually a minute. The usual pulse for an adult is 60 to 100 beats per minute after resting for at least 10 minutes.",
+				"symbol": "",
+				"reference": "National Heart, Lung, and Blood Institute",
+				"referenceURL": "http://www.nhlbi.nih.gov/health/health-topics/topics/hhw/contraction.html"
+			},
+			{
+				"label": "Maximum Heart Rate",
+				"characterization": "The maximum heart rate is the fastest your heart can beat.",
+				"symbol": "",
+				"reference": "National Heart, Lung, and Blood Institute",
+				"referenceURL": "http://www.nhlbi.nih.gov/health/resources/heart/obesity-guide-physical-active-html.htm"
+			},
+			{
+				"label": "Perspiration",
+				"characterization": "Perspiration, or sweat, is a clear, salty liquid produced by glands in your skin. It is how your body cools itself. Sweating a lot is normal when it is hot or when you exercise, feel anxious, or have a fever. It can also happen during menopause.",
+				"symbol": "",
+				"reference": "NIH MedlinePlus",
+				"referenceURL": "https://medlineplus.gov/sweat.html"
+			},
+			{
+				"label": "Resistance/Strength Training",
+				"characterization": "Resistance training, or strength training, is exercise that firms and tones your muscles. It can improve your bone strength, balance, and coordination. Some examples are pushups, lunges, and bicep curls using dumbbells.",
+				"symbol": "",
+				"reference": "National Heart, Lung, and Blood Institute",
+				"referenceURL": "http://www.nhlbi.nih.gov/files/docs/public/heart/phy_active_brief.pdf"
+			},
+			{
+				"label": "Target Heart Rate",
+				"characterization": "Your target heart rate is a percentage of your maximum heart rate, which is the fastest your heart can beat. It is based on your age. The activity level that is best for your health uses 50–75 percent of your maximum heart rate. This range is your target heart rate zone.",
+				"symbol": "",
+				"reference": "National Heart, Lung, and Blood Institute",
+				"referenceURL": "http://www.nhlbi.nih.gov/health/resources/heart/obesity-guide-physical-active-html.htm"
+			},
+			{
+				"label": "Warm Up",
+				"characterization": "Your physical activity session should start at a slow-to-medium pace to give your body a chance to get ready for more vigorous movement. A warm up should last about 5 to 10 minutes.",
+				"symbol": "",
+				"reference": "National Heart, Lung, and Blood Institute",
+				"referenceURL": "http://www.nhlbi.nih.gov/files/docs/public/heart/phy_active.pdf"
+			},
+			{
+				"label": "Water Intake",
+				"characterization": "We all need to drink water. How much you need depends on your size, activity level, and the weather where you live. Keeping track of your water intake helps make sure that you get enough. Your intake includes fluids that you drink, and fluids you get from food.",
+				"symbol": "",
+				"reference": "NIH MedlinePlus",
+				"referenceURL": "https://medlineplus.gov/dehydration.html"
+			},
+			{
+				"label": "Weight (Body Mass)",
+				"characterization": "Your weight is the mass or quantity of your heaviness. It is expressed by units of pounds or kilograms.",
+				"symbol": "",
+				"reference": "NIH MedlinePlus",
+				"referenceURL": ""
+			}
+		],
+		"last-updated": "2016-10-03",
+		"pageURL": "https://medlineplus.gov/characterizations/fitnesscharacterizations.html",
+		"title": "Fitness"
+	}
+}

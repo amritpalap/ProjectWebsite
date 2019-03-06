@@ -1,0 +1,80 @@
+#headerImage{
+	display: block;
+	margin: auto;
+}
+#formBtn{
+	height:50%;
+	width:50%;
+	margin:auto;
+}
+#loadBtn{
+	height:50%;
+	width:50%;
+	margin:auto;
+}
+
+
+.ui-icon-veg:after
+{
+	background-image: url("images/veg.png");
+	background-size: 22px 22px;
+}
+.ui-icon-milk:after
+{
+	background-image: url("images/milk.png");
+	background-size: 22px 22px;
+}
+.ui-icon-grain:after
+{
+	background-image: url("images/grain.png");
+	background-size: 22px 22px;
+}
+.ui-icon-meat:after
+{
+	background-image: url("images/meat.png");
+	background-size: 22px 22px;
+}
+.ui-icon-sheridan:after
+{
+	background-image: url("images/sheridan.png");
+	background-size: 22px 22px;
+}
+.ui-icon-W3:after
+{
+	background-image: url("images/W3Schools.png");
+	background-size: 22px 22px;
+}
+.ui-icon-aboutMe:after
+{
+	background-image: url("images/aboutMe.png");
+	background-size: 22px 22px;
+}
+.ui-icon-submit:after
+{
+	background-image: url("images/submit.png");
+	background-size: 22px 22px;
+}
+table {
+	border-collapse: collapse;
+		width: 100%;
+		color: black;
+}
+
+table td, table th {
+	border: 2px solid black;
+	padding: 4px;
+}
+table tr:nth-child(even){
+	background-color:Grey;
+	color:white;
+}
+table tr:hover {
+	background-color: lightblue;
+}
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: DarkGrey;
+}
+
