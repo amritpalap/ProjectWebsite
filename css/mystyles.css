@@ -1,47 +1,37 @@
-#headerImage{
-	display: block;
-	margin: auto;
-}
-#formBtn{
-	height:50%;
-	width:50%;
-	margin:auto;
-}
-#loadBtn{
-	height:50%;
-	width:50%;
-	margin:auto;
-}
 
-
-.ui-icon-veg:after
+.ui-icon-strength:after
 {
-	background-image: url("images/veg.png");
+	background-image: url("images/strength.png");
 	background-size: 22px 22px;
 }
-.ui-icon-milk:after
+.ui-icon-heartrate:after
 {
-	background-image: url("images/milk.png");
+	background-image: url("images/heartrate.png");
 	background-size: 22px 22px;
 }
-.ui-icon-grain:after
+.ui-icon-maxheartrate:after
 {
-	background-image: url("images/grain.png");
+	background-image: url("images/maxheartrate.png");
 	background-size: 22px 22px;
 }
-.ui-icon-meat:after
+.ui-icon-targetheartrate:after
 {
-	background-image: url("images/meat.png");
+	background-image: url("images/targetheartrate.png");
 	background-size: 22px 22px;
 }
-.ui-icon-sheridan:after
+.ui-icon-warmup:after
 {
-	background-image: url("images/sheridan.png");
+	background-image: url("images/warmup.png");
 	background-size: 22px 22px;
 }
-.ui-icon-W3:after
+.ui-icon-sweat:after
 {
-	background-image: url("images/W3Schools.png");
+	background-image: url("images/sweat.png");
+	background-size: 22px 22px;
+}
+.ui-icon-water:after
+{
+	background-image: url("images/water.png");
 	background-size: 22px 22px;
 }
 .ui-icon-aboutMe:after
@@ -49,32 +39,34 @@
 	background-image: url("images/aboutMe.png");
 	background-size: 22px 22px;
 }
+.ui-icon-weightmeter:after
+{
+	background-image: url("images/weightmeter.png");
+	background-size: 22px 22px;
+}
 .ui-icon-submit:after
 {
 	background-image: url("images/submit.png");
 	background-size: 22px 22px;
 }
-table {
-	border-collapse: collapse;
-		width: 100%;
-		color: black;
-}
 
-table td, table th {
-	border: 2px solid black;
-	padding: 4px;
-}
-table tr:nth-child(even){
-	background-color:Grey;
-	color:white;
-}
-table tr:hover {
-	background-color: lightblue;
-}
-table th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: DarkGrey;
-}
 
+.left{
+	float: left;
+	text-align: center;
+    width: 50%;
+    overflow: hidden;
+	background-color: grey;
+	height: -webkit-fill-available;
+	
+	
+	
+}
+.right{
+	text-align: center;
+	background-color : lightgrey;
+	width: 50%;
+	float: right;
+	height: -webkit-fill-available;
+	
+}​​

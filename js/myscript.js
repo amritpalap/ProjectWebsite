@@ -1,96 +1,130 @@
-$(document).on("pagecreate", "#mainPage", function buildPage() {
-	$.getJSON("a3_FoodGroups.json", function(json){
-		FoodgroupArray = json.Foodgroups.groups ;
-		$("#mainSection").html("<p id='categoryButton'></p>");
-		for(var a = 0; a < FoodgroupArray.length; a++){
-			$("#categoryButton").append("<a id ='"+a+"'  href='#popup' class='categoryBtns ui-btn ui-icon-"+FoodgroupArray[a].groupImage+" ui-btn-icon-right' "+
+var aboutpages = new Array();
+var labelarr =new Array();
+var xmlData;
+var rowID; 
+$(document).on("pagecreate", "#mainPage", function buildPage() 
+{
+	$.getJSON("JSON06-fitnessdefinitions.json", function(json){
+		 labelarr = json.fitnessInfo.labelGroup;
+		console.log(labelarr);
+	for(var x = 0; x < labelarr.length; x++){
+			$(".left").append("<a id ='"+x+"'  href='#popup' class='categoryBtns ui-btn ui-icon-"+labelarr[x].symbol+" ui-btn-icon-right' "+
 				"data-rel='dialog' data-transition='pop'>"+
-				FoodgroupArray[a].groupName+
+				labelarr[x].label+
 			"</a>");
-			var b= a+1;
-		$("#formPage select").append("<option id ='"+b+"'>"+
-				FoodgroupArray[a].groupName +
-			"</option>");
+	
 };
-$("#mainPage h1").append(json.Foodgroups['publisher-group']);
-		$("#mainPage header").append("<image id='headerImage' height='500px' width='100%' src='root_images/"+json.Foodgroups.HeaderImage+"'>");
-$("#categoryButton").append("<a href='#formPage' 		 		 id='formBtn' class='ui-btn'>Survey</a><br>");
-$("#categoryButton").append("<a href='#loadDataPage' id='loadBtn' class='ui-btn' data-rel='dialog' data-transition='pop'>Load data</a>");
-		
-		$(".categoryBtns").click(function(){
+$(".categoryBtns").click(function(){
 			clickId = this.id ;
 			console.log(clickId);
-			$("#popup div#divDescription table").html("");
-			$("#popup h1").html(FoodgroupArray[clickId].groupName);
-			$("#popup h5").html("Directions: "+FoodgroupArray[clickId].Directions);
-			$("#popup div#divDescription table").html("<th id = 'fgID' >FG ID</th>");
-			$("#popup div#divDescription table").append("<th id = 'gender' >Gender</th>");
-			$("#popup div#divDescription table ").append("<th id = 'age' >Age</th>");
-			$("#popup div#divDescription table").append("<th id = 'servSize' >Serving Size</th>");
-			servingsArray = json.Foodgroups.groups[clickId].Servings;
-			
-			for(var x = 0; x < servingsArray.length; x++){
-				$("#popup table").append("<tr id='"+x+"'></tr>");
-				$("#popup table #"+x+"").append("<td>"+servingsArray[x].fgID+"</td>");
-				$("#popup table #"+x+"").append("<td>"+servingsArray[x].gender+"</td>");
-				$("#popup table #"+x+"").append("<td>"+servingsArray[x].ages+"</td>");
-				$("#popup table #"+x+"").append("<td>"+servingsArray[x].servingSize+"</td>");
-			}
-		});
-		
-		$("#submitBtn").click(function(){
-			var catagoryValue = document.getElementById("category").value;
-			localStorage.clear();
-			localStorage.setItem("email", 
-							$("#emailform").val());
-			if(catagoryValue != "Select a Category"){
-				localStorage.setItem("selectCategory",
-							$("#category").val());
-			}
-			else{
-				localStorage.setItem("selectCategory", 
-							"Null");
-			}
-			localStorage.setItem("comment", 
-							$("#comment").val());
-			if($('input[name="citizenCheckbox"]').is(':checked')){
-				localStorage.setItem("canadaCitizen","Yes");	
-			}
-			else{
-				localStorage.setItem("canadaCitizen","No");
-			}
-			if($('input[name="seniorCitizenCheckbox"').is(':checked')){
-			localStorage.setItem("seniorCitizen","Yes");	
-			}
-			else{
-			localStorage.setItem("seniorCitizen","No");	
-			}
-			alert("Data SAVED");
-			
-		});
-			$("#loadBtn").click(function(){
-			$("#emailLoad").val(localStorage.getItem("email"));
-			$("#categoryLoad").val(localStorage.getItem("selectCategory"));
-			$("#questionLoad").val(localStorage.getItem("comment"));
-			$("#canadacitizenLoad").val(localStorage.getItem("canadaCitizen"));
-			$("#seniorCitizenLoad").val(localStorage.getItem("seniorCitizen"));
-		});
+			$("#popup div#divInfo ").html("");
+			$("#popup h1").html(labelarr[clickId].label);
+			$("div#divInfo").html("<p> <strong>characterization:</strong> "+labelarr[clickId].characterization+"</p> <br>"+
+			"<p> <strong>Reference: </strong>"+labelarr[clickId].reference+"</p> <br>"+
+			"<p> <strong>Reference URL: </strong> <a href='"+labelarr[clickId].referenceURL+"' > GotoWebsite<a></p>"			);
+	});
 });
 });
 
-$(document).on("pagecreate", "#mainPage", function buildPage() {
-	
+$(document).on("pagecreate", "#mainPage", function buildPage() {	
+ aboutpages = ["#aboutAmritpal", "#aboutJaskaran", "#aboutJamal"];
 	$.getJSON("Info.json", function(json){
-		console.log(json);
-		$("#aboutPage section#information").append(
-		"<p> Name : "+json.information.Name+"</p><br>"+
-		"<p> Student Number: "+json.information.Number+"</p><br>"+
-		"<p> Program : "+json.information.Program+"</p><br>"+
-		"<p> Quote : "+json.information.Quote+"</p><br>"
+        console.log("lol");		
+		console.log(json.memberinfo);
+		for(var inc=0; inc<aboutpages.length;inc++){
+		$(""+aboutpages[inc]+" section#information").append(
+		"<p> Name : "+json.memberinfo[inc].Name+"</p><br>"+
+		"<p> Student Number: "+json.memberinfo[inc].Number+"</p><br>"+
+		"<p> Login : "+json.memberinfo[inc].Login_Name+"</p><br>"
 		);
-		$("#aboutPage section#image").append(
-		"<image width = '50%' height='50%' src ='root_images/"+json.information.Image+"'></image>"
+		$(""+aboutpages[inc]+" section#image").append(
+		"<image width = '50%' height='50%' src ='root_images/"+json.memberinfo[inc].Image+"'></image>"
 		);
+		};
 	});
 });
+
+$(document).on("pagecreate", "#mainPage", function () 
+{
+	
+	console.log("in xmlCall");
+	$.ajax({ 
+		type:"GET", url:"Pharmaceutical.xml", dataType:"xml",
+		success: function (xml) {
+			buildBtn(xml); },
+		error: function (e) {
+			alert(e.status + "-" + e.statusText); }
+	});
+	
+});
+
+function buildBtn(xml) {
+	xmlData = xml;
+console.log("in builBtn");
+		$("div #name").append(
+		"<strong>Company Name:</strong>"+$(xml).find("companyname").text());
+		$("div #number").append(
+		"<strong>phone Number:</strong>"+$(xml).find("phoneNumber").text());
+	
+	$(xml).find("products").find("prd").each(function(n){
+		$("ul#prdList").append(
+			"<li li-id='" + n + "'>" +
+				"<a href='#xmlpopup'class='ui-btn ui-icon-arrow-r  ui-btn-icon-right' data-rel='dialog' data-transition='pop'>" +
+					$(this).find("name").text() +
+				"</a>" +
+			"</li>"
+	);
+	
+});
+
+
+}
+
+$(document).on("click", "ul#prdList >li", function() {
+	rowID = $(this).closest("li").attr("li-id");
+});
+
+$(document).on("pageshow", "#xmlpopup", function() {
+	console.log("in pageshow for individual");
+	buildind(xmlData, rowID);
+});
+
+
+function buildind(xml, choice) {
+	console.log("in buildind");
+	
+	$("#name").html("<strong>Name:</strong>"+$(xml).find("name:nth(" + choice + ")").text());
+	$("#brandName").html("<strong>Brand Name:</strong> "+$(xml).find("brandName:nth(" + choice + ")").text());
+	$("#drugName").html( "<strong>Drug Name:</strong> "+$(xml).find("drugName:nth(" + choice + ")").text());
+	$("#desc").html("<strong>Description:</strong> "+$(xml).find("desc:nth(" + choice + ")").text());
+	$("#administered").html("<strong>Administered:</strong> "+$(xml).find("administered:nth(" + choice + ")").text());
+	$("#contradication1").html("<strong>Contrandication:</strong>"+$(xml).find("contradication1:nth(" + choice + ")").text());
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
